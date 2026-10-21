@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Permite usar acentos y ñ -->
+    <meta charset="UTF-8">
+
+    <!-- Hace que la página se vea bien en celulares -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título que aparece en la pestaña del navegador -->
+    <title>Mar de Páginas</title>
+
+    <!-- Lora aporta una serif cálida para los títulos; Inter mantiene la lectura clara. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Conecta este HTML con el archivo de estilos -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- ========== 1. MENÚ ========== -->
+    <header>
+        <a class="logo" href="#Inicio">MAR DE PÁGINAS</a>
+
+        <nav>
+            <!-- href="#inicio" lleva a la sección que tenga id="inicio" -->
+            <a href="#Inicio">Inicio</a>
+            <a href="#Nosotros">Nosotros</a>
+            <a href="#Biblioteca">Biblioteca</a>
+            <a href="#comunidad">Comunidad</a>
+        </nav>
+        <div class="zona-carrito">
+            <button id="boton-carrito" class="boton-carrito" type="button" aria-expanded="false" aria-controls="panel-carrito">
+                Carrito (<span id="contador">0</span>)
+            </button>
+            <div class="carrito" id="panel-carrito" aria-live="polite" aria-hidden="true">
+                <button id="cerrar-carrito" class="cerrar-carrito" type="button" aria-label="Cerrar carrito">×</button>
+                <ul id="lista"></ul>
+                <div class="resumen-carrito">
+                    <p>Total: $<span id="total">0</span></p>
+                    <button id="vaciar" type="button">Vaciar carrito</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- ========== 2. PORTADA ========== -->
+    <section id="Inicio" class="portada">
+        <!-- ✏️ Cambia los textos por los tuyos -->
+        <p class="etiqueta">LIBRERÍA INDEPENDIENTE · DESDE 2026</p>
+        <h1>Hay historias que<br><span>se sienten como el mar.</span></h1>
+        <p>Un refugio para encontrar tu próxima lectura y dejarte llevar página a página.</p>
+        <a href="#Biblioteca" class="boton">Explorar historias <span aria-hidden="true">↓</span></a>
+    </section>
+
+
+    <!-- ========== 3. Libros ========== -->
+    <section id="Biblioteca">
+        <div class="encabezado-biblioteca">
+            <div>
+                <p class="etiqueta">SELECCIÓN PARA LEER SIN PRISA</p>
+                <h2>Historias para <span>llevar contigo</span></h2>
+            </div>
+            <p class="nota-biblioteca">Seis historias, muchos mundos por descubrir.</p>
+        </div>
+
+        <!-- Este contenedor agrupa todas las tarjetas -->
+        <div class="contenedor-tarjetas">
+
+          <!-- Tarjeta 1: Estilo Constelación (Bajo la misma estrella) -->
+        <div class="tarjeta estilo-constelacion" data-titulo="Bajo la misma estrella" data-precio="299">
+            <div class="portada">
+            <img src="img/bajo la misma estrella.png" alt="Portada de Bajo la misma estrella">
+            </div>
+            <div class="info">
+                <h3>Bajo la misma estrella</h3>
+                <p class="datos">John Green • Romance Juvenil</p>
+                <p class="descripcion">Hazel y Gus son dos adolescentes que comparten un ingenio mordaz y un amor surgido en un grupo de apoyo. Juntos emprenden un viaje a Ámsterdam para conocer a su autor favorito y vivir una inolvidable historia.</p>
+                <div class="fila-compra"><span class="precio">$299</span><button class="agregar" type="button">Agregar</button></div>
+            </div>
+        </div>
+
+            <!-- Tarjeta 2: Estilo Pergamino Clásico (Orgullo y prejuicio) -->
+        <div class="tarjeta estilo-pergamino" data-titulo="Orgullo y prejuicio" data-precio="249">
+            <div class="portada">
+                <img src="img/orgulloy prejuicio.jpg" alt="Portada de Orgullo y prejuicio">
+            </div>
+            <div class="info">
+                <h3>Orgullo y prejuicio</h3>
+                <p class="datos">Jane Austen • Clásico</p>
+                <p class="descripcion">Narra las apasionadas dinámicas entre Elizabeth Bennet y el altivo señor Darcy en la Inglaterra del siglo XIX, quienes deberán superar sus propios prejuicios para descubrir el verdadero amor.</p>
+                <div class="fila-compra"><span class="precio">$249</span><button class="agregar" type="button">Agregar</button></div>
+            </div>
+        </div>
+
+           <!-- Tarjeta 3: Estilo Verano Soleado (El verano en que me enamoré) -->
+        <div class="tarjeta estilo-verano" data-titulo="El verano en que me enamoré" data-precio="279">
+            <div class="portada">
+                <img src="img/el verano en que me enamoré.jpg" alt="Portada de El verano en que me enamoré">
+            </div>
+            <div class="info">
+                <h3>El verano en que me enamoré</h3>
+                <p class="datos">Jenny Han • Juvenil</p>
+                <p class="descripcion">Belly siempre ha pasado sus vacaciones en la casa de la playa de los Fisher. Sin embargo, este verano todo cambiará cuando los hermanos Conrad y Jeremiah comiencen a verla con otros ojos.</p>
+                <div class="fila-compra"><span class="precio">$279</span><button class="agregar" type="button">Agregar</button></div>
+            </div>
+        </div>
+
+            <!-- Tarjeta 4: Estilo Contraste Dramático (Yo antes de ti) -->
+        <div class="tarjeta estilo-drama" data-titulo="Yo antes de ti" data-precio="319">
+            <div class="portada">
+                <img src="img/yo antes de ti.jpg" alt="Portada de Yo antes de ti">
+            </div>
+            <div class="info">
+                <h3>Yo antes de ti</h3>
+                <p class="datos">Jojo Moyes • Drama Romance</p>
+                <p class="descripcion">Louisa Clark es una chica alegre e inusual que acepta cuidar a Will Traynor, un joven adinerado que perdió las ganas de vivir tras un accidente. Una conexión profunda transformará el destino de ambos.</p>
+                <div class="fila-compra"><span class="precio">$319</span><button class="agregar" type="button">Agregar</button></div>
+            </div>
+        </div>
+
+           <!-- Tarjeta 5: Estilo Ventana y Sombra (A través de mi ventana) -->
+        <div class="tarjeta estilo-ventana" data-titulo="A través de mi ventana" data-precio="289">
+            <div class="portada">
+                <img src="img/a través de mi ventana.jpg" alt="Portada de A través de mi ventana">
+            </div>
+            <div class="info">
+                <h3>A través de mi ventana</h3>
+                <p class="datos">Ariana Godoy • Romance</p>
+                <p class="descripcion">Raquel lleva tiempo enamorada en secreto de su atractivo vecino Ares. Cuando sus caminos comienzan a cruzarse de forma inesperada, se desata un juego de seducción e intensidad irresistible.</p>
+                <div class="fila-compra"><span class="precio">$289</span><button class="agregar" type="button">Agregar</button></div>
+            </div>
+        </div>
+
+<!-- Tarjeta 6: Estilo Moderno Pop Art (Rojo, blanco y sangre azul) -->
+        <div class="tarjeta estilo-moderno" data-titulo="Rojo, blanco y sangre azul" data-precio="329">
+            <div class="portada">
+                <img src="img/rojo, blanco sangre azul.jpg" alt="Portada de Rojo, blanco y sangre azul">
+            </div>
+            <div class="info">
+                <h3>Rojo, blanco y sangre azul</h3>
+                <p class="datos">Casey McQuiston • Contemporáneo</p>
+                <p class="descripcion">El hijo de la presidenta de EE. UU. y el príncipe de Gran Bretaña se ven obligados a simular una amistad por diplomacia, pero su rivalidad se transforma en un romance secreto capaz de alterar la política internacional.</p>
+                <div class="fila-compra"><span class="precio">$329</span><button class="agregar" type="button">Agregar</button></div>
+            </div>
+        </div>
+
+            <!-- ✏️ RETO: copia una tarjeta completa, pégala aquí abajo
+                 y cámbiala por tu película favorita. -->
+
+        </div>
+
+    </section>
+
+
+    <!-- ========== 4. Nosotros ========== -->
+   <section id="Nosotros">
+    <h2>Sobre <span>Mar de Páginas</span></h2>
+    <p>Somos un espacio digital dedicado a los amantes de la lectura. Nuestra misión es conectar a lectores apasionados con grandes historias, reseñas y recomendaciones para encontrar tu próxima lectura ideal.</p>
+    
+    <p style="margin-top: 15px;">
+        <strong>Contacto:</strong> contacto@mardepaginas.com<br>
+        <strong>Plataforma:</strong> Disponible 24/7 online
+    </p>
+</section>
+
+
+    <!-- ========== 5. PIE DE PÁGINA ========== -->
+    <footer id="comunidad">
+    <div class="comunidad">
+        <h3>Únete a nuestra <span>Comunidad Lectora</span></h3>
+        <p>Síguenos para novedades, clubes de lectura y más recomendaciones:</p>
+        <p>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a> • 
+            <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer">TikTok</a> • 
+            <a href="https://www.goodreads.com" target="_blank" rel="noopener noreferrer">Goodreads</a>
+        </p>
+    </div>
+    <br>
+    <p>© 2026 Mar de Páginas • Biblioteca Digital. Todos los derechos reservados.</p>
+</footer>
+    <script src="script.js" defer></script>
+</body>
+
+</html>
